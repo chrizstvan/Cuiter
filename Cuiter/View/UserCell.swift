@@ -1,5 +1,5 @@
 //
-//  Cell.swift
+//  UserCell.swift
 //  Cuiter
 //
 //  Created by Chris Stev on 26/05/20.
@@ -8,47 +8,15 @@
 
 import LBTAComponents
 
-let twitterBlue = UIColor(r: 61, g: 167, b: 244)
-
-class HeaderCell: DatasourceCell {
-    
-    let textLabel: UILabel = {
-       let label = UILabel()
-        label.text = "WHO TO FOLLOW"
-        label.font = UIFont.systemFont(ofSize: 16)
-        return label
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(textLabel)
-        textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-    }
-}
-
-class FooterCell: DatasourceCell {
-    
-    let textLabel: UILabel = {
-       let label = UILabel()
-        label.text = "Show me more"
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = twitterBlue
-        return label
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(textLabel)
-        textLabel.anchor(topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-    }
-}
-
 class UserCell: DatasourceCell {
     override var datasourceItem: Any? {
         didSet {
             //nameLabel.text = datasourceItem as? String
+            
+            guard let user = datasourceItem as? User else { return }
+            nameLabel.text = user.name
+            userNameLabel.text = user.username
+            bioTextView.text = user.bioText
         }
     }
     
@@ -79,6 +47,7 @@ class UserCell: DatasourceCell {
         let tv = UITextView()
         tv.text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         tv.font = UIFont.systemFont(ofSize: 15)
+        tv.backgroundColor = .clear
         return tv
     }()
     
@@ -98,6 +67,11 @@ class UserCell: DatasourceCell {
     
     override func setupViews() {
         super.setupViews()
+        
+        backgroundColor = .white
+        
+        separatorLineView.isHidden = false
+        separatorLineView.backgroundColor = UIColor(r: 230, g: 230, b: 230)
         
         addSubview(profileImageView)
         addSubview(nameLabel)

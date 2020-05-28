@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8B83BDD7247CD66E007E45AE /* HomeDataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDD6247CD66E007E45AE /* HomeDataSourceController.swift */; };
-		8B83BDDB247CDC6C007E45AE /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDDA247CDC6C007E45AE /* Cell.swift */; };
+		8B83BDDB247CDC6C007E45AE /* UserHeaderFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDDA247CDC6C007E45AE /* UserHeaderFooterCell.swift */; };
 		8B83BDDD247CDCC5007E45AE /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDDC247CDCC5007E45AE /* HomeDataSource.swift */; };
+		8B83BDDF247D2744007E45AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDDE247D2744007E45AE /* User.swift */; };
+		8B83BDE1247D2BC3007E45AE /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDE0247D2BC3007E45AE /* UserCell.swift */; };
+		8B83BDE3247D3814007E45AE /* HomeDataSourceController+navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDE2247D3814007E45AE /* HomeDataSourceController+navbar.swift */; };
+		8B83BDE5247E5146007E45AE /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDE4247E5146007E45AE /* TweetCell.swift */; };
+		8B83BDE7247E9968007E45AE /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDE6247E9968007E45AE /* Tweet.swift */; };
 		8BF4F97424796A390065E81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4F97324796A390065E81E /* AppDelegate.swift */; };
 		8BF4F97624796A390065E81E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4F97524796A390065E81E /* SceneDelegate.swift */; };
 		8BF4F97B24796A390065E81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF4F97924796A390065E81E /* Main.storyboard */; };
@@ -23,8 +28,13 @@
 		2D3B8B92E2BBFCE00ED449DF /* Pods_Cuiter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cuiter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8717954C480CBADFB4D5A1B4 /* Pods-Cuiter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cuiter.debug.xcconfig"; path = "Target Support Files/Pods-Cuiter/Pods-Cuiter.debug.xcconfig"; sourceTree = "<group>"; };
 		8B83BDD6247CD66E007E45AE /* HomeDataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSourceController.swift; sourceTree = "<group>"; };
-		8B83BDDA247CDC6C007E45AE /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		8B83BDDA247CDC6C007E45AE /* UserHeaderFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderFooterCell.swift; sourceTree = "<group>"; };
 		8B83BDDC247CDCC5007E45AE /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
+		8B83BDDE247D2744007E45AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8B83BDE0247D2BC3007E45AE /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		8B83BDE2247D3814007E45AE /* HomeDataSourceController+navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeDataSourceController+navbar.swift"; sourceTree = "<group>"; };
+		8B83BDE4247E5146007E45AE /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		8B83BDE6247E9968007E45AE /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		8BF4F97024796A390065E81E /* Cuiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF4F97324796A390065E81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF4F97524796A390065E81E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +71,7 @@
 			children = (
 				8BF4F98724796D810065E81E /* HomeController.swift */,
 				8B83BDD6247CD66E007E45AE /* HomeDataSourceController.swift */,
+				8B83BDE2247D3814007E45AE /* HomeDataSourceController+navbar.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -69,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				8B83BDDC247CDCC5007E45AE /* HomeDataSource.swift */,
+				8B83BDDE247D2744007E45AE /* User.swift */,
+				8B83BDE6247E9968007E45AE /* Tweet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -76,7 +89,9 @@
 		8B83BDD9247CDC15007E45AE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8B83BDDA247CDC6C007E45AE /* Cell.swift */,
+				8B83BDDA247CDC6C007E45AE /* UserHeaderFooterCell.swift */,
+				8B83BDE0247D2BC3007E45AE /* UserCell.swift */,
+				8B83BDE4247E5146007E45AE /* TweetCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,12 +254,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B83BDE1247D2BC3007E45AE /* UserCell.swift in Sources */,
 				8BF4F98824796D810065E81E /* HomeController.swift in Sources */,
 				8B83BDDD247CDCC5007E45AE /* HomeDataSource.swift in Sources */,
 				8B83BDD7247CD66E007E45AE /* HomeDataSourceController.swift in Sources */,
-				8B83BDDB247CDC6C007E45AE /* Cell.swift in Sources */,
+				8B83BDDB247CDC6C007E45AE /* UserHeaderFooterCell.swift in Sources */,
 				8BF4F97424796A390065E81E /* AppDelegate.swift in Sources */,
 				8BF4F97624796A390065E81E /* SceneDelegate.swift in Sources */,
+				8B83BDE5247E5146007E45AE /* TweetCell.swift in Sources */,
+				8B83BDDF247D2744007E45AE /* User.swift in Sources */,
+				8B83BDE3247D3814007E45AE /* HomeDataSourceController+navbar.swift in Sources */,
+				8B83BDE7247E9968007E45AE /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
