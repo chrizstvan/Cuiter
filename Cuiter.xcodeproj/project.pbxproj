@@ -15,6 +15,7 @@
 		8B83BDE3247D3814007E45AE /* HomeDataSourceController+navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDE2247D3814007E45AE /* HomeDataSourceController+navbar.swift */; };
 		8B83BDE5247E5146007E45AE /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDE4247E5146007E45AE /* TweetCell.swift */; };
 		8B83BDE7247E9968007E45AE /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BDE6247E9968007E45AE /* Tweet.swift */; };
+		8B83BE1624851B45007E45AE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83BE1524851B45007E45AE /* Service.swift */; };
 		8BF4F97424796A390065E81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4F97324796A390065E81E /* AppDelegate.swift */; };
 		8BF4F97624796A390065E81E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF4F97524796A390065E81E /* SceneDelegate.swift */; };
 		8BF4F97B24796A390065E81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF4F97924796A390065E81E /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		8B83BDE2247D3814007E45AE /* HomeDataSourceController+navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeDataSourceController+navbar.swift"; sourceTree = "<group>"; };
 		8B83BDE4247E5146007E45AE /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		8B83BDE6247E9968007E45AE /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		8B83BE1524851B45007E45AE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8BF4F97024796A390065E81E /* Cuiter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cuiter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF4F97324796A390065E81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF4F97524796A390065E81E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8B83BE1424851B28007E45AE /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				8B83BE1524851B45007E45AE /* Service.swift */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
 		8BF4F96724796A390065E81E = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		8BF4F97224796A390065E81E /* Cuiter */ = {
 			isa = PBXGroup;
 			children = (
+				8B83BE1424851B28007E45AE /* Singleton */,
 				8B83BDD9247CDC15007E45AE /* View */,
 				8B83BDD8247CDC03007E45AE /* Model */,
 				8B83BDD5247CD651007E45AE /* Controller */,
@@ -259,6 +270,7 @@
 				8B83BDDD247CDCC5007E45AE /* HomeDataSource.swift in Sources */,
 				8B83BDD7247CD66E007E45AE /* HomeDataSourceController.swift in Sources */,
 				8B83BDDB247CDC6C007E45AE /* UserHeaderFooterCell.swift in Sources */,
+				8B83BE1624851B45007E45AE /* Service.swift in Sources */,
 				8BF4F97424796A390065E81E /* AppDelegate.swift in Sources */,
 				8BF4F97624796A390065E81E /* SceneDelegate.swift in Sources */,
 				8B83BDE5247E5146007E45AE /* TweetCell.swift in Sources */,
@@ -418,7 +430,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrizstvan.cuiter.Cuiter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -437,7 +449,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chrizstvan.cuiter.Cuiter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

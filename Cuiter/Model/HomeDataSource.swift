@@ -7,23 +7,33 @@
 //
 
 import LBTAComponents
+import TRON
+import SwiftyJSON
 
-class HomeDataSource: Datasource {
-    //let words = ["user1", "user2", "user3"]
+
+extension Collection where Iterator.Element == JSON {
+    func decode<T: JSONDecodable>() throws -> [T] {
+        return try map{ try T(json: $0) }
+    }
+}
+
+class HomeDataSource: Datasource, JSONDecodable {
     
-    let user: [User] = {
-       let firstUser = User(name: "TEST", username: "@testtest" , bioText: "Lorem ipsum dolor sit amet, ")
-        let secUser = User(name: "Chris Stev", username: "@christev", bioText: "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+    let users: [User]
+    let tweets: [Tweet]
+    
+    required init(json: JSON) throws {
         
-        return [firstUser, secUser]
-    }()
-    
-    let tweet: [Tweet] = {
-        let firstUser = User(name: "Testing Name", username: "@testtest" , bioText: "Lorem ipsum dolor sit amet, ")
-        let tweet = Tweet(user: firstUser, message: "Welcome to my world, really hope you guys enjoy")
-        let tweet2 = Tweet(user: firstUser, message: "This is second tweet, from my exercise to help me more understand about what happend in ios dev and code.")
-        return[tweet, tweet2]
-    }()
+        guard let array = json["users"].array, let tweetArray = json["tweets"].array else {
+            throw NSError(domain: "com.letsbuildthatapp", code: 1, userInfo: [NSLocalizedDescriptionKey: "user not valid in JSON"])
+        }
+        
+        //self.users = array.map{ return User(json: $0) }
+        //self.tweets = tweetArray.map{ Tweet(json: $0) }
+        
+        self.users = try array.decode()
+        self.tweets = try tweetArray.decode()
+    }
     
     override func headerClasses() -> [DatasourceCell.Type]? {
         return [HeaderCell.self]
@@ -39,9 +49,9 @@ class HomeDataSource: Datasource {
     
     override func item(_ indexPath: IndexPath) -> Any? {
         if indexPath.section == 1 {
-            return tweet[indexPath.item]
+            return tweets[indexPath.item]
         }
-        return user[indexPath.item]
+        return users[indexPath.item]
     }
     
     override func numberOfSections() -> Int {
@@ -50,9 +60,9 @@ class HomeDataSource: Datasource {
     
     override func numberOfItems(_ section: Int) -> Int {
         if section == 1 {
-            return tweet.count
+            return tweets.count
         }
         
-        return user.count
+        return users.count
     }
 }

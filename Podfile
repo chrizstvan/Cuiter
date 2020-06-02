@@ -7,5 +7,6 @@ target 'Cuiter' do
 
   # Pods for Cuiter
 pod 'LBTAComponents'
+pod 'TRON', '~> 4.1.0'
 
 end

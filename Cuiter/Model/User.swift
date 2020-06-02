@@ -6,12 +6,20 @@
 //  Copyright © 2020 chrizstvan. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import SwiftyJSON
+import TRON
 
-struct User {
+struct User: JSONDecodable {
     let name: String
     let username: String
     let bioText: String
-    //let profileImage: UIImage
+    let profileImageUrl: String
+    
+    init(json: JSON) {
+        name = json["name"].stringValue
+        username = json["username"].stringValue
+        bioText = json["bio"].stringValue
+        profileImageUrl = json["profileImageUrl"].stringValue
+    }
 }

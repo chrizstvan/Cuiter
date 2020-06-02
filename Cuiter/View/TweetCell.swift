@@ -14,6 +14,8 @@ class TweetCell: DatasourceCell {
         didSet {
             guard let tweet = datasourceItem as? Tweet else { return }
             
+            profileImageView.loadImage(urlString: tweet.user.profileImageUrl)
+            
             let attributeText = NSMutableAttributedString(string: tweet.user.name, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16)])
             
             let usernameString = " \(tweet.user.username)\n"
@@ -34,15 +36,40 @@ class TweetCell: DatasourceCell {
     let messageTextView: UITextView = {
        let tv = UITextView()
         tv.text = "HAVE SAMPLE TEXT"
+        tv.backgroundColor = .clear
         return tv
     }()
     
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
+    let profileImageView: CachedImageView = {
+        let imageView = CachedImageView()
         imageView.image = UIImage(named: "myprofilepic")
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 5.0
         return imageView
+    }()
+    
+    let replayButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "settings"), for: .normal)
+        return button
+    }()
+    
+    let retweetButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "settings"), for: .normal)
+        return button
+    }()
+    
+    let likeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "settings"), for: .normal)
+        return button
+    }()
+    
+    let directMessButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "settings"), for: .normal)
+        return button
     }()
     
     override func setupViews() {
@@ -55,9 +82,22 @@ class TweetCell: DatasourceCell {
         
         addSubview(profileImageView)
         addSubview(messageTextView)
+        //addSubview(replayButton)
         
         profileImageView.anchor(self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, topConstant: 12, leftConstant: 12, bottomConstant: 0, rightConstant: 0, widthConstant: 50, heightConstant: 50)
         
-        messageTextView.anchor(topAnchor, left: profileImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 4, leftConstant: 4, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        messageTextView.anchor(topAnchor, left: profileImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 4, leftConstant: 4, bottomConstant: 8, rightConstant: 0, widthConstant: 0, heightConstant: 0)
+        
+        //replayButton.anchor(nil, left: messageTextView.leftAnchor, bottom: bottomAnchor, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 20, heightConstant: 20)
+        setupBottomButton()
+    }
+    
+    func setupBottomButton() {
+        let buttonStackView = UIStackView(arrangedSubviews: [replayButton, retweetButton, likeButton, directMessButton])
+        buttonStackView.axis = .horizontal
+        buttonStackView.distribution = .fillEqually
+        
+        addSubview(buttonStackView)
+        buttonStackView.anchor(nil, left: messageTextView.leftAnchor, bottom: bottomAnchor, right: rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 20)
     }
 }
